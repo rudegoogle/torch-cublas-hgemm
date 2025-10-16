@@ -29,7 +29,20 @@ jobs:
           #sub-packages: '["nvcc", "cudart", "libcublas"]'  # Include necessary CUDA components
           use-github-cache: false  # Disable caching to avoid path error
           #use-local-cache: false  # Disable caching to avoid path error
+          
+      - name: Set CUDA environment variables
+        shell: pwsh
+        run: |
+          echo "CUDA_HOME=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8" | Out-File -FilePath $env:GITHUB_ENV -Append
+          echo "CUDA_PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8" | Out-File -FilePath $env:GITHUB_ENV -Append
+          echo "PATH=$env:CUDA_HOME\bin;$env:CUDA_HOME\libnvvp;$env:PATH" | Out-File -FilePath $env:GITHUB_ENV -Append
 
+      - name: Verify CUDA setup
+        shell: cmd
+        run: |
+          echo CUDA_HOME=%CUDA_HOME%
+          echo CUDA_PATH=%CUDA_PATH%
+          nvcc --version
 
       # Install Visual Studio Build Tools for C++ compilation
       #- name: Install Visual Studio Build Tools

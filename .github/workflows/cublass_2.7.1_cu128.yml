@@ -76,6 +76,7 @@ jobs:
       
       - name: Build Cublass Wheel
         # python setup.py bdist_wheel
+        # pip wheel . --no-build-isolation -w dist 
         shell: cmd
         env:
           DISTUTILS_USE_SDK: "1"
@@ -88,7 +89,7 @@ jobs:
           where cl
           dir "%VSINSTALLDIR%VC\Tools\MSVC"
           python --version
-          pip wheel . --no-build-isolation -w dist 
+          python setup.py bdist_wheel
         working-directory: ./
       
 

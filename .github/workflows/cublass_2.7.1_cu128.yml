@@ -93,7 +93,7 @@ jobs:
         # TORCH_CUDA_ARCH_LIST: "7.5;8.0;8.6;8.9;9.0"
         shell: cmd
         env:
-          # DISTUTILS_USE_SDK: "1"
+          DISTUTILS_USE_SDK: "1"
           TORCH_CUDA_ARCH_LIST: "8.9"
         run: |
           echo VSINSTALLDIR is "%VSINSTALLDIR%"

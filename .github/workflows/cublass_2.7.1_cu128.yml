@@ -90,10 +90,11 @@ jobs:
       - name: Build Cublass Wheel
         # python setup.py bdist_wheel
         # pip wheel . --no-build-isolation -w dist 
+        # TORCH_CUDA_ARCH_LIST: "7.5;8.0;8.6;8.9;9.0"
         shell: cmd
         env:
-          DISTUTILS_USE_SDK: "1"
-          TORCH_CUDA_ARCH_LIST: "7.5;8.0;8.6;8.9;9.0"
+          # DISTUTILS_USE_SDK: "1"
+          TORCH_CUDA_ARCH_LIST: "8.9"
         run: |
           echo VSINSTALLDIR is "%VSINSTALLDIR%"
           call "%VSINSTALLDIR%VC\Auxiliary\Build\vcvars64.bat"
@@ -102,7 +103,7 @@ jobs:
           where cl
           dir "%VSINSTALLDIR%VC\Tools\MSVC"
           python --version
-          python setup.py bdist_wheel
+          pip wheel . --no-build-isolation -w dist --verbose
         working-directory: ./
       
 

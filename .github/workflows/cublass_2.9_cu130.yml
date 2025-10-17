@@ -94,6 +94,8 @@ jobs:
         env:
           DISTUTILS_USE_SDK: "1"
           TORCH_CUDA_ARCH_LIST: "8.9"
+          MAX_JOBS: "1"
+          GPU_ARCHS: "sm_89"
         run: |
           echo VSINSTALLDIR is "%VSINSTALLDIR%"
           call "%VSINSTALLDIR%VC\Auxiliary\Build\vcvars64.bat"

@@ -23,7 +23,7 @@ jobs:
       - name: Install CUDA Toolkit
         uses: N-Storm/cuda-toolkit@v0.2.28 #Jimver/cuda-toolkit@v0.2.24 N-Storm/cuda-toolkit@v0.2.27m
         with:
-          cuda: '13.0.1'
+          cuda: '13.0'
           #method: 'network'
           #sub-packages: '["nvcc", "cudart", "libcublas"]'  # Include necessary CUDA components
           use-github-cache: false  # Disable caching to avoid path error
@@ -33,7 +33,7 @@ jobs:
         shell: pwsh
         run: |
           echo "CUDA_HOME=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.0" | Out-File -FilePath $env:GITHUB_ENV -Append
-          echo "CUDA_PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.9" | Out-File -FilePath $env:GITHUB_ENV -Append
+          echo "CUDA_PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.0" | Out-File -FilePath $env:GITHUB_ENV -Append
           echo "PATH=$env:CUDA_HOME\bin;$env:CUDA_HOME\libnvvp;$env:PATH" | Out-File -FilePath $env:GITHUB_ENV -Append
 
       - name: Verify CUDA setup

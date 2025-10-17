@@ -23,7 +23,7 @@ jobs:
       - name: Install CUDA Toolkit
         uses: N-Storm/cuda-toolkit@v0.2.28 #Jimver/cuda-toolkit@v0.2.24 N-Storm/cuda-toolkit@v0.2.27m
         with:
-          cuda: '13.0'
+          cuda: '13.0.0'
           #method: 'network'
           #sub-packages: '["nvcc", "cudart", "libcublas"]'  # Include necessary CUDA components
           use-github-cache: false  # Disable caching to avoid path error

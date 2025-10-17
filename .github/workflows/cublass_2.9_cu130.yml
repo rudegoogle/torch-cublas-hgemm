@@ -53,7 +53,7 @@ jobs:
       # pip install torch==2.7.1+cu128 torchvision==0.22.1+cu128 --index-url https://download.pytorch.org/whl/cu128
       - name: Install PyTorch
         run: |
-          pip install --upgrade torch torchvision --index-url https://download.pytorch.org/whl/cu130
+          pip install --upgrade torch torchvision --index-url https://download.pytorch.org/whl/cu128
         shell: cmd
 
       # Install Triton and wheel-building dependencies

@@ -55,6 +55,8 @@ setup(
                         "--expt-relaxed-constexpr",
                         "--expt-extended-lambda",
                         "--use_fast_math",
+                        "-D_WIN32=1",
+                        "-DUSE_CUDA=1"
                     ]
                     + generator_flag
                     + cc_flag

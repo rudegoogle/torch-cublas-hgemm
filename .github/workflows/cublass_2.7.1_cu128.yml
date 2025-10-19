@@ -62,7 +62,7 @@ jobs:
       #  run: |
       #    pip install triton>=3.0.0 wheel setuptools
         run: |
-          pip install wheel setuptools packaging
+          pip install wheel setuptools packaging ninja
         shell: cmd
         
       - name: Install Triton
@@ -95,6 +95,7 @@ jobs:
         env:
           DISTUTILS_USE_SDK: "1"
           TORCH_CUDA_ARCH_LIST: "8.9"
+          CMAKE_GENERATOR: "Ninja"
         run: |
           echo VSINSTALLDIR is "%VSINSTALLDIR%"
           call "%VSINSTALLDIR%VC\Auxiliary\Build\vcvars64.bat"

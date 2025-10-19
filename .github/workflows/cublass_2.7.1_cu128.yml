@@ -95,6 +95,7 @@ jobs:
         env:
           DISTUTILS_USE_SDK: "1"
           TORCH_CUDA_ARCH_LIST: "8.9"
+          GPU_ARCHS: "sm_89"
           CMAKE_GENERATOR: "Ninja"
         run: |
           echo VSINSTALLDIR is "%VSINSTALLDIR%"
